@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17c75a7d-b2ef-414e-ac8f-39332ba46877" name="Default Changelist" comment="" />
+    <list default="true" id="17c75a7d-b2ef-414e-ac8f-39332ba46877" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,12 +14,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMove.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
+            <state relative-caret-position="240">
               <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
               <folding>
+                <marker date="1566817403892" expanded="false" signature="6:122" ph="..." />
                 <marker date="1566817403892" expanded="true" signature="163:1427" ph="{...}" />
                 <marker date="1566817403892" expanded="true" signature="319:473" ph="{...}" />
                 <marker date="1566817403892" expanded="true" signature="497:555" ph="{...}" />
@@ -31,15 +36,43 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerAttak.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+              <folding>
+                <marker date="1568284049422" expanded="true" signature="6:78" ph="..." />
+                <marker date="1568284049422" expanded="true" signature="120:757" ph="{...}" />
+                <marker date="1568284049422" expanded="true" signature="197:218" ph="{...}" />
+                <marker date="1568284049422" expanded="true" signature="276:755" ph="{...}" />
+                <marker date="1568284049422" expanded="true" signature="685:749" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerAttak.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerAttak.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/vcs.xml" />
       </list>
     </option>
   </component>
@@ -49,19 +82,20 @@
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="UnityExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
       </pane>
       <pane id="AssemblyExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
       <pane id="FileSystemExplorer" />
     </panes>
   </component>
@@ -113,11 +147,12 @@
       <updated>1566813405733</updated>
       <workItem from="1566813419080" duration="4352000" />
       <workItem from="1566821332256" duration="26000" />
+      <workItem from="1568282925553" duration="1288000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4378000" />
+    <option name="totallyTimeSpent" value="5666000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -130,8 +165,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25253063" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25519446" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -184,9 +220,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMove.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="240">
           <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
           <folding>
+            <marker date="1566817403892" expanded="false" signature="6:122" ph="..." />
             <marker date="1566817403892" expanded="true" signature="163:1427" ph="{...}" />
             <marker date="1566817403892" expanded="true" signature="319:473" ph="{...}" />
             <marker date="1566817403892" expanded="true" signature="497:555" ph="{...}" />
@@ -197,6 +234,20 @@
             <marker date="1566817403892" expanded="true" signature="1179:1235" ph="{...}" />
             <marker date="1566817403892" expanded="true" signature="1305:1425" ph="{...}" />
             <marker date="1566817403892" expanded="true" signature="1366:1419" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerAttak.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <folding>
+            <marker date="1568284049422" expanded="true" signature="6:78" ph="..." />
+            <marker date="1568284049422" expanded="true" signature="120:757" ph="{...}" />
+            <marker date="1568284049422" expanded="true" signature="197:218" ph="{...}" />
+            <marker date="1568284049422" expanded="true" signature="276:755" ph="{...}" />
+            <marker date="1568284049422" expanded="true" signature="685:749" ph="{...}" />
           </folding>
         </state>
       </provider>
