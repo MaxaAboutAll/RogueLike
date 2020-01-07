@@ -1,28 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int health;
-    [SerializeField] private int defaultSpeed;
-    private int speed;
+    [SerializeField] private int health = 100;
+    [SerializeField] private int defaultSpeed = 15;
+    public int Speed { get; private set; }
     private float dazedTime;
     public float startDazedTime;
-    
-    void Start()
-    {
-    }
 
     void Update()
     {
         if (dazedTime <= 0)
         {
-            speed = defaultSpeed;
+            Speed = defaultSpeed;
         }
         else
         {
-            speed = 0;
+            Speed = 0;
             dazedTime -= Time.deltaTime;
         }
     }
@@ -31,7 +28,6 @@ public class Enemy : MonoBehaviour
     {
         dazedTime = startDazedTime;
         health -= damage;
-        Debug.Log("Damage TAKEN");
         if (health <= 0)
             Destroy(gameObject);
     }

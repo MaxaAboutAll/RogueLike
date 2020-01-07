@@ -23,7 +23,8 @@ public class PlayerAttack : MonoBehaviour
                     Physics2D.OverlapCircleAll(attackPos.position, attackRadius, whatIsEnemies);
                 foreach (var enemy in enemiesToDamage)
                 {
-                    enemy.GetComponent<Enemy>().TakeDamage(damage);
+                    enemy.GetComponent<Enemy>()?.TakeDamage(damage);
+                    Debug.Log(enemy.name);
                 }
                 timeBtwAttack = startTimeBtwAttack;
             }

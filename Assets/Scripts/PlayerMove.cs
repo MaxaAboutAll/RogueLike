@@ -6,15 +6,12 @@ using UnityEngine.UIElements;
 
 public class PlayerMove : MonoBehaviour
 {
-    private GameObject player;
     private Rigidbody2D _rb;
     private bool _isGrounded;
     public float JumpForce = 15f, Speed = 15f;
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
-        _rb = player.GetComponentInChildren<Rigidbody2D>();
-        _rb.fixedAngle = true;
+        _rb = GetComponentInChildren<Rigidbody2D>();
     }
 
     void FixedUpdate()
