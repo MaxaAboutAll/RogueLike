@@ -520,7 +520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1338356433}
   - component: {fileID: 1338356432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
