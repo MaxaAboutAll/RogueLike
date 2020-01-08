@@ -17,7 +17,7 @@ public class BatEnemy : MonoBehaviour
     void FixedUpdate()
     {        
         speed = GetComponent<Enemy>().Speed;
-        if (Vector3.Distance(player.transform.position, transform.position) < PlayerRange)
+        if (player != null && Vector3.Distance(player.transform.position, transform.position) < PlayerRange)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
