@@ -27,7 +27,7 @@ public class PlayerMove : MonoBehaviour
 
     private void RevertLogic()
     {
-        if (Input.mousePosition.x < Screen.width/2)
+        if (Input.mousePosition.x < Screen.width/2 && body.transform.rotation.y != 180)
             body.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
         else
             body.transform.rotation = Quaternion.Euler(Vector3.zero);
