@@ -1,25 +1,28 @@
 fileFormatVersion: 2
-guid: 80be7be2b51b3f3499b19aaae2d15987
+guid: d275a8b8f1f1fe445b02f90d6085b620
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -428899911817575366
-    second: BatSprite_Fly0
+      213: -4253239743812487119
+    second: RevolverWheelSprites_0
   - first:
-      213: -8447652460202202700
-    second: BatSprite_Fly1
+      213: 3468433757749461996
+    second: RevolverWheelSprites_1
   - first:
-      213: -3067520612606686068
-    second: BatSprite_Fly2
+      213: -3431277911803058468
+    second: RevolverWheelSprites_2
   - first:
-      213: -7882501993009953032
-    second: BatSprite_Fly3
+      213: -4415225378111253331
+    second: RevolverWheelSprites_3
+  - first:
+      213: -5203577804766121809
+    second: RevolverWheelSprites_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
-    sRGBTexture: 1
+    sRGBTexture: 0
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -46,20 +49,20 @@ TextureImporter:
     filterMode: 0
     aniso: -1
     mipBias: -100
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 70, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -122,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BatSprite_Fly0
+      name: RevolverWheelSprites_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 21
-        height: 30
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 819deebac37bd5e4286f6c67bb2d7358
-      internalID: -428899911817575366
+      spriteID: 5589ceb136d1485428e4933dd424c2d2
+      internalID: -4253239743812487119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BatSprite_Fly1
+      name: RevolverWheelSprites_1
       rect:
         serializedVersion: 2
-        x: 24
+        x: 32
         y: 0
-        width: 31
-        height: 30
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e838ebc4c23d0a449ceed45d355d66a
-      internalID: -8447652460202202700
+      spriteID: 63e1430c757eca44eb06c484800f3a0f
+      internalID: 3468433757749461996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BatSprite_Fly2
+      name: RevolverWheelSprites_2
       rect:
         serializedVersion: 2
-        x: 55
+        x: 64
         y: 0
-        width: 17
-        height: 30
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf9cb2e0abc9dcd43a8225334f0b6f08
-      internalID: -3067520612606686068
+      spriteID: 25bb6732427a4f14398fc42efbe91f77
+      internalID: -3431277911803058468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BatSprite_Fly3
+      name: RevolverWheelSprites_3
       rect:
         serializedVersion: 2
-        x: 74
+        x: 96
         y: 0
-        width: 31
-        height: 30
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,8 +202,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 095f9e83d798d1444b8216537e9c25bf
-      internalID: -7882501993009953032
+      spriteID: 80252be4e1e1f1a46bbd56f7674752f4
+      internalID: -4415225378111253331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RevolverWheelSprites_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf36a3a98bdcffa43925493bd43dd8e9
+      internalID: -5203577804766121809
       vertices: []
       indices: 
       edges: []
