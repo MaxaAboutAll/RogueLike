@@ -9,15 +9,28 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody2D _rb;
     private bool _isGrounded;
     public float JumpForce = 15f, Speed = 15f;
+    private Camera camera;
+    private GameObject body;
     void Start()
     {
         _rb = GetComponentInChildren<Rigidbody2D>();
+        body = GameObject.Find("Body");
+        camera = FindObjectOfType<Camera>();
     }
 
     void FixedUpdate()
     {
         MovementLogic();
         JumpLogic();
+        RevertLogic();
+    }
+
+    private void RevertLogic()
+    {
+        if (Input.mousePosition.x < Screen.width/2 && body.transform.rotation.y != 180)
+            body.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        else
+            body.transform.rotation = Quaternion.Euler(Vector3.zero);
     }
     
     private void MovementLogic()
