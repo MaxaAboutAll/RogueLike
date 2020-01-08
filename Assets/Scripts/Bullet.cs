@@ -20,7 +20,8 @@ public class Bullet : MonoBehaviour
         destiantion.Normalize();
         var angle = Mathf.Atan2(destiantion.y, destiantion.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        length = Mathf.Sqrt(destiantion.x * destiantion.x + destiantion.y * destiantion.y); 
+        length = Mathf.Sqrt(destiantion.x * destiantion.x + destiantion.y * destiantion.y);
+        Destroy(gameObject, 30);
     }
 
     private void Update()
