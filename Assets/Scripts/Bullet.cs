@@ -18,6 +18,8 @@ public class Bullet : MonoBehaviour
         var mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
         destiantion = mousePos - position;
         destiantion.Normalize();
+        var angle = Mathf.Atan2(destiantion.y, destiantion.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         length = Mathf.Sqrt(destiantion.x * destiantion.x + destiantion.y * destiantion.y); 
     }
 

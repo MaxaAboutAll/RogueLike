@@ -23,11 +23,8 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            var position = bulletStartPosition.position.normalized;
-            var mousePos = camera.ScreenToWorldPoint(Input.mousePosition).normalized;
-            GameObject bullet = Instantiate(bulletPrefab, bulletStartPosition.position, Quaternion.identity);
+            GameObject bullet = Instantiate(bulletPrefab, bulletStartPosition.position, new Quaternion());
             bullet.GetComponent<Bullet>().Speed = speed;
-//            bullet.GetComponent<Rigidbody2D>().AddRelativeForce(Time.deltaTime * speed * (mousePos - position), ForceMode2D.Impulse);
         }
     }
 }
