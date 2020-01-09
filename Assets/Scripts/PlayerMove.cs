@@ -11,12 +11,14 @@ public class PlayerMove : MonoBehaviour
     public float JumpForce = 15f, Speed = 15f;
     private Camera camera;
     private GameObject body;
+    private Animator bodyAnimator;
     void Start()
     {
         _rb = GetComponentInChildren<Rigidbody2D>();
         body = GameObject.Find("Body");
         camera = FindObjectOfType<Camera>();
         camera.GetComponent<CameraFollow>().FindPlayer();
+        bodyAnimator = body.GetComponentInChildren<Animator>();
     }
 
     void FixedUpdate()
@@ -43,7 +45,8 @@ public class PlayerMove : MonoBehaviour
     private void MovementLogic()
     {
         float horizontalAxis = Input.GetAxis("Horizontal");
-        
+        if(horizontalAxis != 0) bodyAnimator.SetBool("IsWalking", true);
+        else bodyAnimator.SetBool("IsWalking", false);
         Vector2 movement = new Vector2(horizontalAxis * Speed, _rb.velocity.y);
         if (Math.Abs(horizontalAxis) > 0)
             _rb.velocity = movement;
