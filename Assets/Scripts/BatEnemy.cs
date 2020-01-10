@@ -5,21 +5,33 @@ using UnityEngine;
 public class BatEnemy : MonoBehaviour
 {
     private GameObject player;
-    private Rigidbody2D _rb;
     private float speed;
+    private Enemy enemyComponent;
     public float PlayerRange = 3f;
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player");
+        enemyComponent = GetComponent<Enemy>();
     }
 
     void FixedUpdate()
     {        
-        speed = GetComponent<Enemy>().Speed;
-        if (player != null && Vector3.Distance(player.transform.position, transform.position) < PlayerRange)
+        speed = enemyComponent.Speed;
+        if (player && Vector3.Distance(player.transform.position, transform.position) < PlayerRange)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            if((player.transform.position - transform.position).x > 0)
+                FlipSprite(false);
+            else
+                FlipSprite(true);
         }
+    }
+
+    private void FlipSprite(bool toLeft)
+    {
+        if(!toLeft)
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        else
+            transform.rotation = Quaternion.Euler(Vector3.zero);
     }
 }

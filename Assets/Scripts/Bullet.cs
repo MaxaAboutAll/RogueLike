@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class Bullet : MonoBehaviour
 {
@@ -9,10 +10,16 @@ public class Bullet : MonoBehaviour
     private int damage = 10;
 
     private Vector2 destiantion;
+    [SerializeField]
+    private GameObject sparkPrefab;
     public float Speed { private get; set; }
+    [SerializeField]
+    public float SparkForce;
     private float length;
+    private Random random;
     private void Start()
     {
+        random = new Random();
         var camera = FindObjectOfType<Camera>();
         var position = transform.position;
         var mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
@@ -22,6 +29,18 @@ public class Bullet : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         length = Mathf.Sqrt(destiantion.x * destiantion.x + destiantion.y * destiantion.y);
         Destroy(gameObject, 30);
+        var countOfSparks = random.Next(2, 6);
+        var angleStep = 45 / countOfSparks;
+        var sparkAngle = -22.5f;
+        for (int i = 0; i < countOfSparks; i++)
+        {
+            GameObject spark = Instantiate(sparkPrefab, position, new Quaternion());
+            var sparkDir = new Vector2(destiantion.x / length + sparkAngle * Mathf.Deg2Rad,
+                destiantion.y / length + sparkAngle * Mathf.Deg2Rad);
+            spark.GetComponent<Rigidbody2D>().AddForce(sparkDir * SparkForce, ForceMode2D.Impulse);
+            Destroy(spark, 0.1f);
+            sparkAngle += angleStep;
+        }
     }
 
     private void Update()

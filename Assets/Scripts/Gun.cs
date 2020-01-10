@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.LWRP;
 using UnityEngine.UI;
+using Random = System.Random;
 
 public class Gun : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class Gun : MonoBehaviour
     
     private Image patronsUi;
     private bool isRecharging = false;
+
     private void Start()
     {
         patronsUi = GameObject.Find("PatronsUI").GetComponent<Image>();
@@ -41,7 +43,8 @@ public class Gun : MonoBehaviour
             {
                 StartCoroutine(ShowFireLight());
                 isRecharging = false;
-                GameObject bullet = Instantiate(bulletPrefab, bulletStartPosition.position, new Quaternion());
+                var bulletPos = bulletStartPosition.position;
+                GameObject bullet = Instantiate(bulletPrefab, bulletPos, new Quaternion());
                 bullet.GetComponent<Bullet>().Speed = speed;
                 patronCount--;
                 SwitchPatronsUi();

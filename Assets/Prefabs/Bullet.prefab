@@ -96,6 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  sparkPrefab: {fileID: 1404945334926451041, guid: 8ca59ce2683dd4f4992989d2dfc90145,
+    type: 3}
+  SparkForce: 10
 --- !u!50 &-2004155118808517623
 Rigidbody2D:
   serializedVersion: 4
