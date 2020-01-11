@@ -6,19 +6,22 @@ using UnityEngine.UIElements;
 
 public class PlayerMove : MonoBehaviour
 {
-    private Rigidbody2D _rb;
-    private bool _isGrounded;
-    public float JumpForce = 15f, Speed = 15f;
+    private Rigidbody2D rb;
+    private bool isGrounded;
+    public float JumpForce = 15f, Speed = 15f, CheckRadius;
+    private Transform groundCheck;
+    public LayerMask whatIsGround;
     private Camera camera;
     private GameObject body;
     private Animator bodyAnimator;
     void Start()
     {
-        _rb = GetComponentInChildren<Rigidbody2D>();
+        rb = GetComponentInChildren<Rigidbody2D>();
         body = GameObject.Find("Body");
         camera = FindObjectOfType<Camera>();
         camera.GetComponent<CameraFollow>().FindPlayer();
         bodyAnimator = body.GetComponentInChildren<Animator>();
+        groundCheck = GameObject.Find("GroundCheck").transform;
     }
 
     void FixedUpdate()
@@ -47,35 +50,15 @@ public class PlayerMove : MonoBehaviour
         float horizontalAxis = Input.GetAxis("Horizontal");
         if(horizontalAxis != 0) bodyAnimator.SetBool("IsWalking", true);
         else bodyAnimator.SetBool("IsWalking", false);
-        Vector2 movement = new Vector2(horizontalAxis * Speed, _rb.velocity.y);
+        Vector2 movement = new Vector2(horizontalAxis * Speed, rb.velocity.y);
         if (Math.Abs(horizontalAxis) > 0)
-            _rb.velocity = movement;
+            rb.velocity = movement;
     }
 
     private void JumpLogic()
     {
-        if (Input.GetAxis("Jump") > 0)
-        {
-            if (_isGrounded)
-                _rb.AddForce(Vector2.up * JumpForce);
-        }
-    }
-    
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        IsGroundedUpdate(collision, true);
-    }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        IsGroundedUpdate(collision, false);
-    }
-
-    private void IsGroundedUpdate(Collision2D collision, bool value)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            _isGrounded = value;
-        }
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, CheckRadius, whatIsGround);
+        if (Input.GetAxis("Jump") > 0 && isGrounded)
+                rb.velocity = Vector2.up * JumpForce;
     }
 }

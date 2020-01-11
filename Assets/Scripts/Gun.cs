@@ -12,7 +12,6 @@ public class Gun : MonoBehaviour
     private GameObject bulletPrefab;
     [SerializeField]
     private Transform bulletStartPosition;
-    [SerializeField] 
     private Light2D fireLight;
     [SerializeField]
     private float speed = 100;

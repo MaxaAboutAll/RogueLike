@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatEnemy : MonoBehaviour
+public class ZombieEnemy : MonoBehaviour
 {
     private GameObject player;
     private float speed;
@@ -30,10 +30,12 @@ public class BatEnemy : MonoBehaviour
     private void MovementLogic()
     {
         speed = enemyComponent.Speed;
-        if (player && Vector3.Distance(player.transform.position, transform.position) < PlayerRange)
+        var enemyPos = transform.position;
+        if (player && Vector3.Distance(player.transform.position, enemyPos) < PlayerRange)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-            if((player.transform.position - transform.position).x > 0)
+            var dir = player.transform.position - enemyPos;
+            transform.position += new Vector3(dir.normalized.x * speed * Time.deltaTime, 0) ;
+            if (dir.x > 0)
                 FlipSprite(false);
             else
                 FlipSprite(true);

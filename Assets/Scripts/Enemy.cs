@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int health = 100;
     [SerializeField] private int defaultSpeed = 15;
     [SerializeField] private int damage = 20;
-    [SerializeField] private float force = 20;
+    [SerializeField] private float repulsiveForce = 20;
     public int Speed { get; private set; }
     private float dazedTime;
     public float startDazedTime = 1;
@@ -54,6 +54,6 @@ public class Enemy : MonoBehaviour
         var direction = other.transform.position - transform.position;
         direction.Normalize();
         direction.y = 1;
-        other.GetComponent<Rigidbody2D>().AddForce(direction * force, ForceMode2D.Impulse);
+        other.GetComponent<Rigidbody2D>().AddForce(direction * repulsiveForce, ForceMode2D.Impulse);
     }
 }
