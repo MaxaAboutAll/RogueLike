@@ -14,6 +14,7 @@ public class PlayerMove : MonoBehaviour
     private Camera camera;
     private GameObject body;
     private Animator bodyAnimator;
+    private CameraFollow cameraFollow;
     void Start()
     {
         rb = GetComponentInChildren<Rigidbody2D>();
@@ -22,6 +23,7 @@ public class PlayerMove : MonoBehaviour
         camera.GetComponent<CameraFollow>().FindPlayer();
         bodyAnimator = body.GetComponentInChildren<Animator>();
         groundCheck = GameObject.Find("GroundCheck").transform;
+        cameraFollow = camera.GetComponent<CameraFollow>();
     }
 
     void FixedUpdate()
@@ -36,12 +38,12 @@ public class PlayerMove : MonoBehaviour
         if (Input.mousePosition.x < Screen.width / 2 && body.transform.rotation.y != 180)
         {
             body.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            camera.GetComponent<CameraFollow>().faceLeft = true;
+            cameraFollow.faceLeft = true;
         }
         else
         {
             body.transform.rotation = Quaternion.Euler(Vector3.zero);
-            camera.GetComponent<CameraFollow>().faceLeft = false;
+            cameraFollow.faceLeft = false;
         }
     }
     

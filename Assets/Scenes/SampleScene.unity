@@ -393,8 +393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aad852d28d948343b9970b273028a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damping: 1.5
-  offset: {x: 2, y: 1}
+  damping: 2
+  offset: {x: 2.1, y: 1}
   faceLeft: 0
 --- !u!1 &478265684
 GameObject:
