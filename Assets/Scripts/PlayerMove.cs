@@ -8,10 +8,11 @@ public class PlayerMove : MonoBehaviour
 {
     private Rigidbody2D rb;
     private bool isGrounded;
-    public float JumpForce = 15f, Speed = 15f, CheckRadius;
+    public float jumpForce = 15f, speed = 15f, checkRadius = 0.15f;
     private Transform groundCheck;
-    public LayerMask whatIsGround;
-    private Camera camera;
+    [SerializeField]
+    private LayerMask whatIsGround;
+    private Camera newCamera;
     private GameObject body;
     private Animator bodyAnimator;
     private CameraFollow cameraFollow;
@@ -19,11 +20,12 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponentInChildren<Rigidbody2D>();
         body = GameObject.Find("Body");
-        camera = FindObjectOfType<Camera>();
-        camera.GetComponent<CameraFollow>().FindPlayer();
+        newCamera = FindObjectOfType<Camera>();
+        newCamera.GetComponent<CameraFollow>().FindPlayer();
         bodyAnimator = body.GetComponentInChildren<Animator>();
         groundCheck = GameObject.Find("GroundCheck").transform;
-        cameraFollow = camera.GetComponent<CameraFollow>();
+        cameraFollow = newCamera.GetComponent<CameraFollow>();
+        whatIsGround = LayerMask.GetMask("Ground");
     }
 
     void FixedUpdate()
@@ -52,15 +54,15 @@ public class PlayerMove : MonoBehaviour
         float horizontalAxis = Input.GetAxis("Horizontal");
         if(horizontalAxis != 0) bodyAnimator.SetBool("IsWalking", true);
         else bodyAnimator.SetBool("IsWalking", false);
-        Vector2 movement = new Vector2(horizontalAxis * Speed, rb.velocity.y);
+        Vector2 movement = new Vector2(horizontalAxis * speed, rb.velocity.y);
         if (Math.Abs(horizontalAxis) > 0)
             rb.velocity = movement;
     }
 
     private void JumpLogic()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, CheckRadius, whatIsGround);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         if (Input.GetAxis("Jump") > 0 && isGrounded)
-                rb.velocity = Vector2.up * JumpForce;
+                rb.velocity = Vector2.up * jumpForce;
     }
 }

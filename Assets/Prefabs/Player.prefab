@@ -96,10 +96,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5186f311825e60c4ea8945ac18d0147d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpForce: 15
-  Speed: 15
-  CheckRadius: 0.5
-  groundCheck: {fileID: 302574350772900847}
+  jumpForce: 15
+  speed: 15
+  checkRadius: 0.15
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &302574349411694835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +138,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a985e05b2634d48a6b537ff84bbd8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 4
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullHeart: {fileID: 4432793351920879750, guid: d056d2d48670ccd4d9a021eae8cafb43,
+    type: 3}
+  emptyHeart: {fileID: 5642012044021194823, guid: d056d2d48670ccd4d9a021eae8cafb43,
+    type: 3}
 --- !u!1 &302574349538691747
 GameObject:
   m_ObjectHideFlags: 0
