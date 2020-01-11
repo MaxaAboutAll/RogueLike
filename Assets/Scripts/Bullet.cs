@@ -53,6 +53,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        Debug.Log("somebody");
         var enemy = other.collider.GetComponent<Enemy>(); 
         if(enemy != null)
             enemy.TakeDamage(damage);

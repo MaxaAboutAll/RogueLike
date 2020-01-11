@@ -50,7 +50,7 @@ public class Gun : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && !isRecharging)
         {
             isRecharging = true;
             StartCoroutine(Recharge());
@@ -67,7 +67,7 @@ public class Gun : MonoBehaviour
         while (isRecharging && patronCount < 4)
         {
             yield return new WaitForSeconds(1);
-            if(!isRecharging) break;
+            if(!isRecharging || patronCount >= 4) break;
             patronCount++;
             SwitchPatronsUi();
         }
