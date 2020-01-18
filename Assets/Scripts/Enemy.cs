@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
     {
         dazedTime = startDazedTime;
         health -= damage;
-        StartCoroutine(HasAttacked());
+        animator?.Play("SkeletonHit");
         if (health <= 0)
             StartCoroutine(MakeDeath());
     }
@@ -67,14 +67,11 @@ public class Enemy : MonoBehaviour
         direction.y = 1;
         other.GetComponent<Rigidbody2D>().AddForce(direction * repulsiveForce, ForceMode2D.Impulse);
     }
-    private IEnumerator HasAttacked()
+
+    public void PlayIdle()
     {
-        animator?.Play("SkeletonHit");
-        yield return new WaitForSeconds(1f);    
         animator?.Play("SkeletonIdle");
-
     }
-
     private IEnumerator MakeDeath()
     {
         if (!isDeath)
