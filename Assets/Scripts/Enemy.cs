@@ -27,7 +27,6 @@ public class Enemy : MonoBehaviour
         if (dazedTime <= 0)
         {
             Speed = defaultSpeed;
-            animator?.SetInteger("CountOfAttack", 0);
         }
         else
         {
@@ -42,7 +41,10 @@ public class Enemy : MonoBehaviour
         health -= damage;
         animator?.Play("SkeletonHit");
         if (health <= 0)
-            StartCoroutine(MakeDeath());
+            if(gameObject.CompareTag("Boss"))
+                StartCoroutine(MakeDeath());
+            else
+                Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -61,16 +63,12 @@ public class Enemy : MonoBehaviour
     {
         dazedTime = startDazedTime;
         animator?.Play("SkeletonAttack");
+        animator?.Play("VampireAttack");
         other.GetComponent<PlayerHealth>().TakeDamage(damage);
         var direction = other.transform.position - transform.position;
         direction.Normalize();
         direction.y = 1;
         other.GetComponent<Rigidbody2D>().AddForce(direction * repulsiveForce, ForceMode2D.Impulse);
-    }
-
-    public void PlayIdle()
-    {
-        animator?.Play("SkeletonIdle");
     }
     private IEnumerator MakeDeath()
     {
@@ -78,10 +76,16 @@ public class Enemy : MonoBehaviour
         {
             isDeath = true;
             animator?.Play("SkeletonDeath");
-            GetComponent<Rigidbody2D>().simulated = false;
+            if(GetComponent<Rigidbody2D>() != null)
+                GetComponent<Rigidbody2D>().simulated = false;
             GetComponent<BoxCollider2D>().size = new Vector2(0.24f, 0.03f);
             yield return new WaitForSeconds(1f);
             Destroy(gameObject);
         }
+    }
+
+    public void PlayIdle()
+    {
+        animator?.Play("SkeletonIdle");
     }
 }
