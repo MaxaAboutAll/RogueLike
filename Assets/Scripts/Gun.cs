@@ -18,7 +18,7 @@ public class Gun : MonoBehaviour
     [SerializeField]
     private float fireLightMilliseconds = 50;
     [SerializeField]
-    private int patronCount = 4;
+    public int patronCount = 4;
     [SerializeField]
     public Sprite[] sprites;
     
@@ -27,6 +27,8 @@ public class Gun : MonoBehaviour
 
     private void Start()
     {
+        if (Player.isChanged)
+            patronCount = Player.Patrons;
         patronsUi = GameObject.Find("PatronsUI").GetComponent<Image>();
         fireLight = GameObject.Find("FireLight").GetComponent<Light2D>();
         fireLight.enabled = false;

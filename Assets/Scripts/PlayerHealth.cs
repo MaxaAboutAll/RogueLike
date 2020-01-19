@@ -2,12 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField]
-    private int health = 4;
+    public int health = 4;
     [SerializeField]
     private Image[] hearts;
     [SerializeField]
@@ -15,6 +16,8 @@ public class PlayerHealth : MonoBehaviour
     
     private void Start()
     {
+        if (Player.isChanged)
+            health = Player.Health;
         for (int i = 0; i < hearts.Length; i++)
         {            
             hearts[i].enabled = true;
@@ -29,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(0);
             health = 0;
         }
         hearts[health].sprite = emptyHeart;

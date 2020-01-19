@@ -54,18 +54,24 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         var enemy = other.collider.GetComponent<Enemy>(); 
-        if(enemy != null)
+        if (enemy != null)
+        {
             enemy.TakeDamage(damage);
-        if(!other.collider.CompareTag("Player"))
+            Destroy(gameObject);
+        }
+        if(other.collider.CompareTag("Wall"))
             Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var enemy = other.GetComponent<Enemy>(); 
-        if(enemy != null)
+        var enemy = other.GetComponent<Enemy>();
+        if (enemy != null)
+        {
             enemy.TakeDamage(damage);
-        if(!other.CompareTag("Player"))
+            Destroy(gameObject);
+        }
+        if(other.CompareTag("Wall"))
             Destroy(gameObject);
     }
 }

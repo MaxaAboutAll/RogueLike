@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1688,6 +1688,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50846d45856b7e74d8a1e632965aa05b, type: 3}
+--- !u!1 &734724859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3815149108265027691, guid: 50846d45856b7e74d8a1e632965aa05b,
+    type: 3}
+  m_PrefabInstance: {fileID: 734724858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &757831185
 GameObject:
   m_ObjectHideFlags: 0
@@ -3982,6 +3988,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5334484771722446495, guid: 1d4955e0f80eb824892f4d949e36a453,
+        type: 3}
+      propertyPath: enemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5334484771722446495, guid: 1d4955e0f80eb824892f4d949e36a453,
+        type: 3}
+      propertyPath: nextScene
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5334484771722446495, guid: 1d4955e0f80eb824892f4d949e36a453,
+        type: 3}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 734724859}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d4955e0f80eb824892f4d949e36a453, type: 3}
 --- !u!1 &1972150510
