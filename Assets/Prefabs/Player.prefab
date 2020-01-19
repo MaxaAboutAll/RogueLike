@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 15
-  speed: 15
+  speed: 8
   checkRadius: 0.15
   whatIsGround:
     serializedVersion: 2
