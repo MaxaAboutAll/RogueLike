@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class SkeletonEnemy : MonoBehaviour
@@ -8,6 +9,7 @@ public class SkeletonEnemy : MonoBehaviour
     private float speed;
     private Enemy enemyComponent;
     private Animator animator;
+    private GameObject Salut;
     public Transform wavesSpawnPoint;
     public float PlayerRange = 3f;
     void Start()
@@ -16,6 +18,8 @@ public class SkeletonEnemy : MonoBehaviour
         enemyComponent = GetComponent<Enemy>();
         animator = GetComponent<Animator>();
         animator.SetInteger("Health", enemyComponent.health);
+        Salut = GameObject.Find("Salut");
+        Salut.SetActive(false);
     }
 
     void FixedUpdate()
@@ -57,5 +61,11 @@ public class SkeletonEnemy : MonoBehaviour
         var secondWave = Instantiate(Wave, spawnPos, new Quaternion());
         firstWave.GetComponent<Wave>().dir = new Vector2(-1, 0);
         secondWave.GetComponent<Wave>().dir = new Vector2(1, 0);
+    }
+
+    public void Destroy()
+    {
+        Destroy(GameObject.FindWithTag("Player"));           
+        Salut.SetActive(true);
     }
 }

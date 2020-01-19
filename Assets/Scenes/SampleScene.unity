@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -808,7 +808,7 @@ PrefabInstance:
     - target: {fileID: 4161622830318998636, guid: f0995c15ba508644e96b2aa0909115b9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.84
+      value: -18.68
       objectReference: {fileID: 0}
     - target: {fileID: 4161622830318998636, guid: f0995c15ba508644e96b2aa0909115b9,
         type: 3}
@@ -1732,7 +1732,7 @@ PrefabInstance:
     - target: {fileID: 7015789462297612376, guid: f94a65c709107a147afb615dee768fa0,
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 0.20864649
+      value: 0.19085571
       objectReference: {fileID: 0}
     - target: {fileID: 7015789462297612376, guid: f94a65c709107a147afb615dee768fa0,
         type: 3}

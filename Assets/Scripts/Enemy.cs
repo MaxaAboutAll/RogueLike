@@ -80,6 +80,9 @@ public class Enemy : MonoBehaviour
                 GetComponent<Rigidbody2D>().simulated = false;
             GetComponent<BoxCollider2D>().size = new Vector2(0.24f, 0.03f);
             yield return new WaitForSeconds(1f);
+            var skelet = GetComponent<SkeletonEnemy>();
+            if(skelet != null)
+                skelet.Destroy();
             Destroy(gameObject);
         }
     }
