@@ -66,7 +66,7 @@ public class Gun : MonoBehaviour
     {
         while (isRecharging && patronCount < 4)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             if(!isRecharging || patronCount >= 4) break;
             patronCount++;
             SwitchPatronsUi();
